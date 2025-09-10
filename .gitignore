@@ -1,0 +1,6 @@
+# Entorno virtual
+venv/
+
+# Archivos de salida y logs
+/outputs/
+/logs/
