@@ -1,4 +1,6 @@
 # data-pipeline/common/config.py
+"""Configuration settings and constants for the data pipeline."""
+
 import os
 from pathlib import Path
 
