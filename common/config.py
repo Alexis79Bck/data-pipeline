@@ -22,6 +22,12 @@ DATE_FORMAT = "%Y-%m-%d"
 TIME_FORMAT = "%H:%M:%S"
 DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 
+# URLs base de scraping
+RESULTADOS_URLS = {
+    "LOTERIADEHOY": "https://loteriadehoy.com/animalito/lottoactivo/historico/{start}/{end}/", 
+    "LOTTOACTIVO": "https://lottoactivo.com/historial/lotto_activo/{start}/{end}/",
+}
+
 # Mapeo número → animal (completo para Lotto Activo)
 ANIMALS_MAP = {
     "0": "DELFIN",
