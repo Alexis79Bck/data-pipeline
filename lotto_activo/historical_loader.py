@@ -18,7 +18,8 @@ from common.config import (
     RESULTADOS_URLS,
     DATA_DIR,
     LOGS_DIR,
-    DEFAULT_HEADERS
+    DEFAULT_HEADERS,
+    ANIMAL_TO_NUMBER,
 )
 
 # Configurar logging básico
@@ -26,18 +27,31 @@ logging.basicConfig(
     filename=LOGS_DIR / "historical_loader.log",
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
-    encoding="utf-8"
+    encoding="utf-8",
 )
 
 
 class HistoricalLoader:
-    '''Carga histórica de datos de Lotto Activo - Versión extendida para data-pipeline
-    Extrae datos semanales del último año y genera un JSON consolidado.'''
+    """Carga histórica de datos de Lotto Activo - Versión extendida para data-pipeline
+    Extrae datos semanales del último año y genera un JSON consolidado."""
 
-    def __init__(self, source="LOTERIADEHOY"):
+    def __init__(self, source="LOTERIADEHOY", output_file=None):
         self.base_url = RESULTADOS_URLS[source]
-        self.output_file = Path(DATA_DIR) / "historical_data_last_year.json"
-        self.output_file.parent.mkdir(parents=True, exist_ok=True)
+        self.output_file = Path(output_file) if output_file else None
+        # No creamos directorios aquí para evitar efectos secundarios innecesarios
+        
+    def _get_output_path(self, start_date: str, end_date: str, yearly: bool = False) -> Path:
+        """Calcula la ruta del archivo de salida basado en las fechas"""
+        if self.output_file and not yearly:
+            return self.output_file
+            
+        # Si output_file no fue especificado o es yearly, usamos nombres dinámicos
+        filename = (
+            f"historical_data_year_{start_date}_to_{end_date}.json" 
+            if yearly 
+            else f"historical_data_{start_date}_to_{end_date}.json"
+        )
+        return Path(DATA_DIR) / filename
 
     def load_last_year(self) -> List[Dict[str, Any]]:
         """Carga los últimos 12 meses (52 semanas) de datos"""
@@ -52,14 +66,14 @@ class HistoricalLoader:
             logging.info(
                 "Cargando semana: %s -> %s",
                 current_start.strftime("%d-%m-%Y"),
-                current_end.strftime("%d-%m-%Y")
+                current_end.strftime("%d-%m-%Y"),
             )
             print(
-                f"Cargando semana: {current_start:%d-%m-%Y} -> {current_end:%d-%m-%Y}")
+                f"Cargando semana: {current_start:%d-%m-%Y} -> {current_end:%d-%m-%Y}"
+            )
 
             weekly_data = self._load_data_for_range(
-                current_start.strftime("%Y-%m-%d"),
-                current_end.strftime("%Y-%m-%d")
+                current_start.strftime("%Y-%m-%d"), current_end.strftime("%Y-%m-%d")
             )
             all_data.extend(weekly_data)
 
@@ -69,21 +83,23 @@ class HistoricalLoader:
         self._save_to_json(all_data, current_start, current_end, yearly=True)
         return all_data
 
-    def _load_data_for_range(self, start_date: str, end_date: str) -> List[Dict[str, Any]]:
+    def _load_data_for_range(
+        self, start_date: str, end_date: str
+    ) -> List[Dict[str, Any]]:
         """Carga datos para un rango semanal específico"""
         url = self.base_url.format(start=start_date, end=end_date)
         try:
             response = requests.get(url, headers=DEFAULT_HEADERS, timeout=30)
             response.raise_for_status()
 
-            soup = BeautifulSoup(response.text, 'html.parser')
-            table = soup.find('table', {'id': 'table'})
+            soup = BeautifulSoup(response.text, "html.parser")
+            table = soup.find("table", {"id": "table"})
 
             if not table:
                 logging.warning(
-                    "No se encontró tabla en el rango %s -> %s", start_date, end_date)
-                print(
-                    f"⚠️ No se encontró tabla en el rango {start_date} -> {end_date}")
+                    "No se encontró tabla en el rango %s -> %s", start_date, end_date
+                )
+                print(f"⚠️ No se encontró tabla en el rango {start_date} -> {end_date}")
                 return []
 
             return self._extract_table_data(table, start_date, end_date)
@@ -100,43 +116,100 @@ class HistoricalLoader:
             logging.exception("Error inesperado al procesar %s : %s", url, e)
         return []
 
-    def _extract_table_data(self, table, start_date: str, end_date: str) -> List[Dict[str, Any]]:
-        """Extrae datos de la tabla semanal y los normaliza"""
+    def _extract_table_data(
+        self, table, start_date: str, end_date: str
+    ) -> List[Dict[str, Any]]:
+        """Extrae datos de la tabla semanal de LoteriaDeHoy (pivotada por fechas).
+           Formato ESTRUCTURADO (para producción).
+        """
+
         data = []
-        rows = table.find_all("tr")
 
-        for row in rows[1:]:  # saltar encabezado
-            cols = [c.get_text(strip=True) for c in row.find_all("td")]
-            if not cols:
-                continue
+        # Obtener las fechas desde el encabezado (omitimos "Horario")
+        headers = [th.get_text(strip=True) for th in table.select("thead th")][1:]
 
-            # ⚠️ Adaptar según la estructura real de columnas de la tabla
-            registro = {
-                "fecha": cols[0],
-                "sorteo": cols[1],
-                "animal": cols[2],
-                "numero": cols[3],
-                "rango": f"{start_date} -> {end_date}"
-            }
-            data.append(registro)
+        # Recorrer filas del cuerpo
+        for row in table.select("tbody tr"):
+            hora = row.find("th").get_text(strip=True)  # Columna de horario
+            celdas = row.find_all("td")
+
+            for i, celda in enumerate(celdas):
+                fecha = headers[i]  # Fecha asociada a esta columna
+                animal = celda.get_text(strip=True).title()  # Normalizar capitalización
+                numero = ANIMAL_TO_NUMBER.get(animal.upper())
+
+                registro = {
+                    "sorteo": {
+                        "fecha": fecha,
+                        "hora": hora,
+                        "animal": animal,
+                        "numero": numero,
+                    },
+                    "fuente_scraper": {
+                        "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+                        "rango_fechas": {
+                            "inicio": start_date,
+                            "fin": end_date,
+                        },
+                        "script": "historical_loader",
+                        "procesado_el": datetime.now().isoformat(),
+                        "validado": numero is not None,
+                    },
+                }
+                data.append(registro)
+
+        return data
+    
+    def _extract_table_data_plain(
+        self, table, start_date: str, end_date: str
+    ) -> List[Dict[str, Any]]:
+        """Extrae datos de la tabla semanal de LoteriaDeHoy (pivotada por fechas).
+           Formato PLANO (para tests/depuración).
+        """
+
+        data = []
+
+        # Obtener las fechas desde el encabezado (omitimos "Horario")
+        headers = [th.get_text(strip=True) for th in table.select("thead th")][1:]
+
+        # Recorrer filas del cuerpo
+        for row in table.select("tbody tr"):
+            hora = row.find("th").get_text(strip=True)  # Columna de horario
+            celdas = row.find_all("td")
+
+            for i, celda in enumerate(celdas):
+                fecha = headers[i]  # Fecha asociada a esta columna
+                animal = celda.get_text(strip=True).title()  # Normalizar capitalización
+                numero = ANIMAL_TO_NUMBER.get(animal.upper())
+
+                registro = {
+                    "fecha": fecha,
+                    "hora": hora,
+                    "animal": animal,
+                    "numero": numero,
+                    "rango": f"{start_date} -> {end_date}",
+                    "fuente": "loteriadehoy.com",
+                }
+                data.append(registro)
 
         return data
 
     def _save_to_json(self, data, start_date, end_date, yearly=False):
-        """Guarda datos en formato JSON"""
-        if yearly:
-            filename = DATA_DIR / \
-                f"historical_data_year_{start_date}_to_{end_date}.json"
-        else:
-            filename = DATA_DIR / \
-                f"historical_data_{start_date}_to_{end_date}.json"
-
+        """Guarda datos en formato JSON y actualiza self.output_file"""
+        filename = self._get_output_path(start_date, end_date, yearly)
+        
+        # Asegurar que el directorio padre existe
+        filename.parent.mkdir(parents=True, exist_ok=True)
+        
         try:
             with open(filename, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=2, ensure_ascii=False)
-            logging.info("Datos guardados en %s .", filename)
+            logging.info("Datos guardados en %s.", filename)
+            
+            # ✅ CRUCIAL: Actualizamos output_file para reflejar la ruta real
+            self.output_file = filename
         except IOError as e:
-            logging.error("No se pudo guardar el archivo %s : %s", filename, e)
+            logging.error("No se pudo guardar el archivo %s: %s", filename, e)
 
 
 # Ejecución directa

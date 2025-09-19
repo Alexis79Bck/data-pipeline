@@ -1,7 +1,7 @@
 # data-pipeline/common/config.py
 """Configuration settings and constants for the data pipeline."""
 
-import os
+# import os
 from pathlib import Path
 
 # Ruta base del proyecto
