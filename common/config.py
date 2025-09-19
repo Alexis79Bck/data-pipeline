@@ -7,6 +7,27 @@ from pathlib import Path
 # Ruta base del proyecto
 BASE_DIR = Path(__file__).parent.parent
 
+# Headers de la API
+DEFAULT_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/135.0.0.0 Safari/537.36"
+    ),
+    "Accept": (
+        "text/html,application/xhtml+xml,application/xml;"
+        "q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8"
+    ),
+    "Accept-Language": "es-ES,es;q=0.9,en;q=0.8",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "DNT": "1",  # Do Not Track
+    "Upgrade-Insecure-Requests": "1",
+    "Cache-Control": "no-cache",
+    "X-Request-Origin": "data-pipeline/lotto-historical",
+    "X-Environment": "development"
+}
+
 # Rutas de salida
 OUTPUTS_DIR = BASE_DIR / "outputs"
 LOGS_DIR = BASE_DIR / "logs"
@@ -24,7 +45,7 @@ DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 # URLs base de scraping
 RESULTADOS_URLS = {
-    "LOTERIADEHOY": "https://loteriadehoy.com/animalito/lottoactivo/historico/{start}/{end}/", 
+    "LOTERIADEHOY": "https://loteriadehoy.com/animalito/lottoactivo/historico/{start}/{end}/",
     "LOTTOACTIVO": "https://lottoactivo.com/historial/lotto_activo/{start}/{end}/",
 }
 
