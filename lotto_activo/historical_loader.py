@@ -40,16 +40,21 @@ class HistoricalLoader:
         self.output_file = Path(output_file) if output_file else None
         # No creamos directorios aquí para evitar efectos secundarios innecesarios
         
-    def _get_output_path(self, start_date: str, end_date: str, yearly: bool = False) -> Path:
+    def _get_output_path(self, start_date: str | datetime, end_date: str | datetime, yearly: bool = False) -> Path:
         """Calcula la ruta del archivo de salida basado en las fechas"""
+        
+        # Normalizamos fechas
+        safe_start = self._sanitize_date(start_date)
+        safe_end = self._sanitize_date(end_date)
+
         if self.output_file and not yearly:
             return self.output_file
             
         # Si output_file no fue especificado o es yearly, usamos nombres dinámicos
         filename = (
-            f"historical_data_year_{start_date}_to_{end_date}.json" 
+            f"historical_data_year_{safe_start}_to_{safe_end}.json" 
             if yearly 
-            else f"historical_data_{start_date}_to_{end_date}.json"
+            else f"historical_data_{safe_start}_to_{safe_end}.json"
         )
         return Path(DATA_DIR) / filename
 
@@ -193,6 +198,13 @@ class HistoricalLoader:
                 data.append(registro)
 
         return data
+
+    def _sanitize_date(self, date_value: str | datetime) -> str:
+        """Convierte fecha (datetime o string) a formato YYYY-MM-DD seguro para nombres de archivo"""
+        if isinstance(date_value, datetime):
+            return date_value.strftime("%Y-%m-%d")
+        # Si ya es string con hora → recortamos solo la parte de fecha
+        return str(date_value).split(" ")[0]
 
     def _save_to_json(self, data, start_date, end_date, yearly=False):
         """Guarda datos en formato JSON y actualiza self.output_file"""
