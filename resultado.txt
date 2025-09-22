@@ -1,0 +1,1029 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.4.2, pluggy-1.6.0 -- /home/ele/Documentos/AlexisEdMata/Proyectos_desde_Github/data-pipeline/venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/ele/Documentos/AlexisEdMata/Proyectos_desde_Github/data-pipeline
+plugins: cov-7.0.0, mock-3.15.1
+collecting ... collected 66 items
+
+tests/test_base_scraper.py::test_dummy_scraper_mock PASSED               [  1%]
+tests/test_base_scraper.py::test_dummy_scraper_real PASSED               [  3%]
+tests/test_base_scraper.py::test_scraper_error_handling PASSED           [  4%]
+tests/test_base_scraper.py::test_scraper_data_flow PASSED                [  6%]
+tests/test_base_scraper.py::test_scraper_empty_data_handling PASSED      [  7%]
+tests/test_historical_loader.py::test_load_data_for_range PASSED         [  9%]
+tests/test_historical_loader.py::test_load_last_year FAILED              [ 10%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_scraper_initialization PASSED [ 12%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_clean_number_valid PASSED [ 13%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_clean_number_invalid FAILED [ 15%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_clean_animal_valid FAILED [ 16%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_clean_animal_invalid PASSED [ 18%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_extract_row_data_valid PASSED [ 19%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_extract_row_data_invalid PASSED [ 21%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_process_single_item_valid PASSED [ 22%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_process_single_item_invalid FAILED [ 24%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_validate_item_valid PASSED [ 25%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_validate_item_invalid PASSED [ 27%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_scrape_data_success PASSED [ 28%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_scrape_data_network_error FAILED [ 30%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_process_data_success PASSED [ 31%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_process_data_empty PASSED [ 33%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_save_data_success PASSED [ 34%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_save_data_empty FAILED [ 36%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_run_success FAILED [ 37%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_get_latest_data PASSED [ 39%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_close PASSED [ 40%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_extract_table_data_no_table PASSED [ 42%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_extract_table_data_with_table PASSED [ 43%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraperIntegration::test_full_workflow_mock FAILED [ 45%]
+tests/test_lotto_activo_scraper.py::TestLottoActivoScraperIntegration::test_error_handling_chain FAILED [ 46%]
+tests/test_utils.py::TestParseSpanishDate::test_valid_dates[6 de septiembre de 2025-2025-09-06] PASSED [ 48%]
+tests/test_utils.py::TestParseSpanishDate::test_valid_dates[15 de enero de 2024-2024-01-15] PASSED [ 50%]
+tests/test_utils.py::TestParseSpanishDate::test_valid_dates[1 de diciembre de 2023-2023-12-01] PASSED [ 51%]
+tests/test_utils.py::TestParseSpanishDate::test_valid_dates[31 de mayo de 2022-2022-05-31] PASSED [ 53%]
+tests/test_utils.py::TestParseSpanishDate::test_valid_dates[6 DE SEPTIEMBRE DE 2025-2025-09-06] PASSED [ 54%]
+tests/test_utils.py::TestParseSpanishDate::test_valid_dates[6 De Septiembre De 2025-2025-09-06] PASSED [ 56%]
+tests/test_utils.py::TestParseSpanishDate::test_invalid_dates[fecha inv\xe1lida] PASSED [ 57%]
+tests/test_utils.py::TestParseSpanishDate::test_invalid_dates[6 de marzoo de 2025] PASSED [ 59%]
+tests/test_utils.py::TestParseSpanishDate::test_invalid_dates[6 de 13 de 2025] PASSED [ 60%]
+tests/test_utils.py::TestParseSpanishDate::test_invalid_dates[] PASSED   [ 62%]
+tests/test_utils.py::TestParseSpanishDate::test_invalid_dates[6 de septiembre] PASSED [ 63%]
+tests/test_utils.py::TestParseSpanishDate::test_invalid_dates[septiembre de 2025] PASSED [ 65%]
+tests/test_utils.py::TestParseSpanishDate::test_invalid_dates_none PASSED [ 66%]
+tests/test_utils.py::TestParseSpanishDate::test_invalid_dates_edge_cases PASSED [ 68%]
+tests/test_utils.py::TestParseSpanishDate::test_all_months PASSED        [ 69%]
+tests/test_utils.py::TestConvertTime12hTo24h::test_valid_times[08:00 AM-08:00:00] PASSED [ 71%]
+tests/test_utils.py::TestConvertTime12hTo24h::test_valid_times[08:00 PM-20:00:00] PASSED [ 72%]
+tests/test_utils.py::TestConvertTime12hTo24h::test_valid_times[12:00 AM-00:00:00] PASSED [ 74%]
+tests/test_utils.py::TestConvertTime12hTo24h::test_valid_times[12:00 PM-12:00:00] PASSED [ 75%]
+tests/test_utils.py::TestConvertTime12hTo24h::test_valid_times[01:30 AM-01:30:00] PASSED [ 77%]
+tests/test_utils.py::TestConvertTime12hTo24h::test_valid_times[11:59 PM-23:59:00] PASSED [ 78%]
+tests/test_utils.py::TestConvertTime12hTo24h::test_valid_times[12:30:45 AM-00:30:45] PASSED [ 80%]
+tests/test_utils.py::TestConvertTime12hTo24h::test_valid_times[12:30:45 PM-12:30:45] PASSED [ 81%]
+tests/test_utils.py::TestConvertTime12hTo24h::test_invalid_times[invalid] PASSED [ 83%]
+tests/test_utils.py::TestConvertTime12hTo24h::test_invalid_times[12:00] PASSED [ 84%]
+tests/test_utils.py::TestConvertTime12hTo24h::test_invalid_times[12:00 XX] PASSED [ 86%]
+tests/test_utils.py::TestConvertTime12hTo24h::test_invalid_times[] PASSED [ 87%]
+tests/test_utils.py::TestConvertTime12hTo24h::test_invalid_times_none PASSED [ 89%]
+tests/test_utils.py::TestConvertTime12hTo24h::test_invalid_times_edge_cases PASSED [ 90%]
+tests/test_utils.py::TestConvertTime12hTo24h::test_case_insensitive PASSED [ 92%]
+tests/test_utils.py::TestJsonUtils::test_save_and_load_json PASSED       [ 93%]
+tests/test_utils.py::TestJsonUtils::test_save_json_creates_directory PASSED [ 95%]
+tests/test_utils.py::TestJsonUtils::test_load_nonexistent_json PASSED    [ 96%]
+tests/test_utils.py::TestJsonUtils::test_save_json_with_unicode PASSED   [ 98%]
+tests/test_utils.py::TestJsonUtils::test_save_json_empty_data PASSED     [100%]
+
+=================================== FAILURES ===================================
+_____________________________ test_load_last_year ______________________________
+
+mock_get = <MagicMock name='get' id='140620365533136'>
+loader = <lotto_activo.historical_loader.HistoricalLoader object at 0x7fe4bb597520>
+
+    @patch("lotto_activo.historical_loader.requests.get")
+    def test_load_last_year(mock_get, loader):
+        """Test del método load_last_year - solo 2 semanas para prueba rápida"""
+        # Mock de respuesta
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.text = MOCK_HTML
+        mock_get.return_value = mock_response
+    
+        # Reducir el rango de prueba a 2 semanas
+        with patch("lotto_activo.historical_loader.datetime") as mock_datetime:
+            now = datetime(2025, 9, 14)
+            mock_datetime.now.return_value = now
+            mock_datetime.side_effect = datetime
+    
+>           data = loader.load_last_year()
+
+tests/test_historical_loader.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+lotto_activo/historical_loader.py:88: in load_last_year
+    self._save_to_json(all_data, current_start, current_end, yearly=True)
+lotto_activo/historical_loader.py:211: in _save_to_json
+    filename = self._get_output_path(start_date, end_date, yearly)
+lotto_activo/historical_loader.py:47: in _get_output_path
+    safe_start = self._sanitize_date(start_date)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <lotto_activo.historical_loader.HistoricalLoader object at 0x7fe4bb597520>
+date_value = datetime.datetime(2025, 9, 20, 0, 0)
+
+    def _sanitize_date(self, date_value: str | datetime) -> str:
+        """Convierte fecha (datetime o string) a formato YYYY-MM-DD seguro para nombres de archivo"""
+>       if isinstance(date_value, datetime):
+E       TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+lotto_activo/historical_loader.py:204: TypeError
+----------------------------- Captured stdout call -----------------------------
+Cargando semana: 14-09-2024 -> 20-09-2024
+Cargando semana: 21-09-2024 -> 27-09-2024
+Cargando semana: 28-09-2024 -> 04-10-2024
+Cargando semana: 05-10-2024 -> 11-10-2024
+Cargando semana: 12-10-2024 -> 18-10-2024
+Cargando semana: 19-10-2024 -> 25-10-2024
+Cargando semana: 26-10-2024 -> 01-11-2024
+Cargando semana: 02-11-2024 -> 08-11-2024
+Cargando semana: 09-11-2024 -> 15-11-2024
+Cargando semana: 16-11-2024 -> 22-11-2024
+Cargando semana: 23-11-2024 -> 29-11-2024
+Cargando semana: 30-11-2024 -> 06-12-2024
+Cargando semana: 07-12-2024 -> 13-12-2024
+Cargando semana: 14-12-2024 -> 20-12-2024
+Cargando semana: 21-12-2024 -> 27-12-2024
+Cargando semana: 28-12-2024 -> 03-01-2025
+Cargando semana: 04-01-2025 -> 10-01-2025
+Cargando semana: 11-01-2025 -> 17-01-2025
+Cargando semana: 18-01-2025 -> 24-01-2025
+Cargando semana: 25-01-2025 -> 31-01-2025
+Cargando semana: 01-02-2025 -> 07-02-2025
+Cargando semana: 08-02-2025 -> 14-02-2025
+Cargando semana: 15-02-2025 -> 21-02-2025
+Cargando semana: 22-02-2025 -> 28-02-2025
+Cargando semana: 01-03-2025 -> 07-03-2025
+Cargando semana: 08-03-2025 -> 14-03-2025
+Cargando semana: 15-03-2025 -> 21-03-2025
+Cargando semana: 22-03-2025 -> 28-03-2025
+Cargando semana: 29-03-2025 -> 04-04-2025
+Cargando semana: 05-04-2025 -> 11-04-2025
+Cargando semana: 12-04-2025 -> 18-04-2025
+Cargando semana: 19-04-2025 -> 25-04-2025
+Cargando semana: 26-04-2025 -> 02-05-2025
+Cargando semana: 03-05-2025 -> 09-05-2025
+Cargando semana: 10-05-2025 -> 16-05-2025
+Cargando semana: 17-05-2025 -> 23-05-2025
+Cargando semana: 24-05-2025 -> 30-05-2025
+Cargando semana: 31-05-2025 -> 06-06-2025
+Cargando semana: 07-06-2025 -> 13-06-2025
+Cargando semana: 14-06-2025 -> 20-06-2025
+Cargando semana: 21-06-2025 -> 27-06-2025
+Cargando semana: 28-06-2025 -> 04-07-2025
+Cargando semana: 05-07-2025 -> 11-07-2025
+Cargando semana: 12-07-2025 -> 18-07-2025
+Cargando semana: 19-07-2025 -> 25-07-2025
+Cargando semana: 26-07-2025 -> 01-08-2025
+Cargando semana: 02-08-2025 -> 08-08-2025
+Cargando semana: 09-08-2025 -> 15-08-2025
+Cargando semana: 16-08-2025 -> 22-08-2025
+Cargando semana: 23-08-2025 -> 29-08-2025
+Cargando semana: 30-08-2025 -> 05-09-2025
+Cargando semana: 06-09-2025 -> 12-09-2025
+Cargando semana: 13-09-2025 -> 14-09-2025
+_______________ TestLottoActivoScraper.test_clean_number_invalid _______________
+
+self = <test_lotto_activo_scraper.TestLottoActivoScraper object at 0x7fe4bb58b670>
+
+    def test_clean_number_invalid(self):
+        """Test number cleaning with invalid inputs."""
+        assert self.scraper._clean_number("37") is None
+>       assert self.scraper._clean_number("-1") is None
+E       AssertionError: assert '01' is None
+E        +  where '01' = _clean_number('-1')
+E        +    where _clean_number = <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4bae72a70>._clean_number
+E        +      where <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4bae72a70> = <test_lotto_activo_scraper.TestLottoActivoScraper object at 0x7fe4bb58b670>.scraper
+
+tests/test_lotto_activo_scraper.py:53: AssertionError
+________________ TestLottoActivoScraper.test_clean_animal_valid ________________
+
+self = <test_lotto_activo_scraper.TestLottoActivoScraper object at 0x7fe4bb589c30>
+
+    def test_clean_animal_valid(self):
+        """Test animal cleaning with valid inputs."""
+        assert self.scraper._clean_animal("LEON") == "LEON"
+        assert self.scraper._clean_animal("leon") == "LEON"
+>       assert self.scraper._clean_animal("León") == "LEON"
+E       AssertionError: assert None == 'LEON'
+E        +  where None = _clean_animal('León')
+E        +    where _clean_animal = <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4babf0220>._clean_animal
+E        +      where <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4babf0220> = <test_lotto_activo_scraper.TestLottoActivoScraper object at 0x7fe4bb589c30>.scraper
+
+tests/test_lotto_activo_scraper.py:62: AssertionError
+___________ TestLottoActivoScraper.test_process_single_item_invalid ____________
+
+self = <test_lotto_activo_scraper.TestLottoActivoScraper object at 0x7fe4bb500310>
+
+    def test_process_single_item_invalid(self):
+        """Test processing single item with invalid data."""
+        item = {
+            "fecha": "invalid",
+            "numero": "invalid",
+            "animal": "invalid"
+        }
+    
+        result = self.scraper._process_single_item(item)
+>       assert result is None
+E       AssertionError: assert {'animal': 'invalid', 'fecha': 'invalid', 'fila': 0, 'fuente': 'lotto-activo', ...} is None
+
+tests/test_lotto_activo_scraper.py:132: AssertionError
+____________ TestLottoActivoScraper.test_scrape_data_network_error _____________
+
+self = <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4bab5f100>
+start_date = '2025-01-15', end_date = '2025-01-16'
+
+    def scrape_data(self, start_date: str, end_date: str) -> List[Dict[str, Any]]:
+        """
+        Extrae los resultados de la página web de Lotto Activo.
+    
+        Args:
+            start_date: Fecha de inicio (YYYY-MM-DD)
+            end_date: Fecha de fin (YYYY-MM-DD)
+    
+        Returns:
+            Lista de resultados crudos
+    
+        Raises:
+            ScrapingError: Si hay error durante el scraping
+        """
+        try:
+            # Validar fechas
+            if not validate_date_range(start_date, end_date):
+                raise ValidationError(f"Rango de fechas inválido: {start_date} → {end_date}")
+    
+            # Construir URL
+            url = self.url.format(start=start_date, end=end_date)
+            self.logger.info(f"🌐 Solicitando datos desde: {url}")
+    
+            # Realizar request con timeout
+>           response = self.session.get(url, timeout=self.timeout)
+
+lotto_activo/scraper.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.10/unittest/mock.py:1114: in __call__
+    return self._mock_call(*args, **kwargs)
+/usr/lib/python3.10/unittest/mock.py:1118: in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <MagicMock name='get' id='140620361760000'>
+args = ('https://test-url.com/lotto/2025-01-15/2025-01-16/',)
+kwargs = {'timeout': 5}, effect = Exception('Network error')
+
+    def _execute_mock_call(self, /, *args, **kwargs):
+        # separate from _increment_mock_call so that awaited functions are
+        # executed separately from their call, also AsyncMock overrides this method
+    
+        effect = self.side_effect
+        if effect is not None:
+            if _is_exception(effect):
+>               raise effect
+E               Exception: Network error
+
+/usr/lib/python3.10/unittest/mock.py:1173: Exception
+
+The above exception was the direct cause of the following exception:
+
+self = <test_lotto_activo_scraper.TestLottoActivoScraper object at 0x7fe4bb500c70>
+mock_get = <MagicMock name='get' id='140620361760000'>
+
+    @patch('requests.Session.get')
+    def test_scrape_data_network_error(self, mock_get):
+        """Test scraping with network error."""
+        mock_get.side_effect = Exception("Network error")
+    
+        with pytest.raises(ScrapingError, match="Error de red"):
+>           self.scraper.scrape_data("2025-01-15", "2025-01-16")
+
+tests/test_lotto_activo_scraper.py:207: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4bab5f100>
+start_date = '2025-01-15', end_date = '2025-01-16'
+
+    def scrape_data(self, start_date: str, end_date: str) -> List[Dict[str, Any]]:
+        """
+        Extrae los resultados de la página web de Lotto Activo.
+    
+        Args:
+            start_date: Fecha de inicio (YYYY-MM-DD)
+            end_date: Fecha de fin (YYYY-MM-DD)
+    
+        Returns:
+            Lista de resultados crudos
+    
+        Raises:
+            ScrapingError: Si hay error durante el scraping
+        """
+        try:
+            # Validar fechas
+            if not validate_date_range(start_date, end_date):
+                raise ValidationError(f"Rango de fechas inválido: {start_date} → {end_date}")
+    
+            # Construir URL
+            url = self.url.format(start=start_date, end=end_date)
+            self.logger.info(f"🌐 Solicitando datos desde: {url}")
+    
+            # Realizar request con timeout
+            response = self.session.get(url, timeout=self.timeout)
+            response.raise_for_status()
+    
+            # Parsear HTML
+            soup = BeautifulSoup(response.text, "html.parser")
+    
+            # Extraer datos de la tabla
+            results = self._extract_table_data(soup, start_date, end_date)
+    
+            if not results:
+                self.logger.warning("📭 No se encontraron datos en el rango especificado")
+                return []
+    
+            self.logger.info(f"📥 {len(results)} registros extraídos exitosamente")
+            return results
+    
+        except requests.exceptions.RequestException as e:
+            error_msg = f"Error de red al consultar {url}: {str(e)}"
+            self.logger.error(error_msg)
+            raise ScrapingError(error_msg) from e
+        except Exception as e:
+            error_msg = f"Error inesperado durante el scraping: {str(e)}"
+            self.logger.error(error_msg)
+>           raise ScrapingError(error_msg) from e
+E           common.base_scraper.ScrapingError: Error inesperado durante el scraping: Network error
+
+lotto_activo/scraper.py:121: ScrapingError
+
+During handling of the above exception, another exception occurred:
+
+self = <test_lotto_activo_scraper.TestLottoActivoScraper object at 0x7fe4bb500c70>
+mock_get = <MagicMock name='get' id='140620361760000'>
+
+    @patch('requests.Session.get')
+    def test_scrape_data_network_error(self, mock_get):
+        """Test scraping with network error."""
+        mock_get.side_effect = Exception("Network error")
+    
+>       with pytest.raises(ScrapingError, match="Error de red"):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'Error de red'
+E        Input: 'Error inesperado durante el scraping: Network error'
+
+tests/test_lotto_activo_scraper.py:206: AssertionError
+------------------------------ Captured log call -------------------------------
+INFO     test-lotto-activo:scraper.py:95 🌐 Solicitando datos desde: https://test-url.com/lotto/2025-01-15/2025-01-16/
+ERROR    test-lotto-activo:scraper.py:120 Error inesperado durante el scraping: Network error
+_________________ TestLottoActivoScraper.test_save_data_empty __________________
+
+self = <test_lotto_activo_scraper.TestLottoActivoScraper object at 0x7fe4bb501630>
+
+    def test_save_data_empty(self):
+        """Test saving empty data."""
+>       with pytest.raises(SavingError, match="No hay datos procesados"):
+E       Failed: DID NOT RAISE <class 'common.base_scraper.SavingError'>
+
+tests/test_lotto_activo_scraper.py:273: Failed
+------------------------------ Captured log call -------------------------------
+WARNING  test-lotto-activo:scraper.py:394 ⚠ No hay datos procesados para guardar
+___________________ TestLottoActivoScraper.test_run_success ____________________
+
+self = <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4ba6a7a60>
+processed_data = [{'animal': 'LEON', 'fecha': '2025-01-15', 'numero': '05', 'validado': True}]
+
+    def _save_step_with_retry(self, processed_data: List[Dict[str, Any]]) -> Path:
+        """Paso 3: Guardado con retry logic."""
+        if not processed_data:
+            self.logger.warning("⚠ No hay datos procesados para guardar")
+            return None
+    
+        last_error = None
+    
+        for attempt in range(self.max_retries + 1):
+            try:
+                self.logger.info(f"💾 Intento {attempt + 1} de guardado")
+    
+                output_file = self.save_data(processed_data, output_format="json")
+    
+                if output_file and output_file.exists():
+                    file_size = get_file_size_mb(output_file)
+                    self.logger.info(f"✅ Datos guardados en {output_file} ({file_size}MB)")
+                    return output_file
+                else:
+>                   raise SavingError("El archivo no se creó correctamente")
+E                   common.base_scraper.SavingError: El archivo no se creó correctamente
+
+common/base_scraper.py:328: SavingError
+
+The above exception was the direct cause of the following exception:
+
+self = <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4ba6a7a60>
+start_date = '2025-01-15', end_date = '2025-01-16'
+
+    def run(self, start_date: str, end_date: str) -> Dict[str, Any]:
+        """
+        Orquesta el flujo completo del scraper con manejo robusto de errores.
+    
+        Args:
+            start_date: Fecha de inicio (YYYY-MM-DD)
+            end_date: Fecha de fin (YYYY-MM-DD)
+    
+        Returns:
+            Diccionario con métricas y resultados del scraping
+    
+        Raises:
+            ScraperError: Si hay error crítico durante la ejecución
+        """
+        self.start_time = datetime.now()
+        self.logger.info(f"🚀 Iniciando scraping para {self.name}")
+        self.logger.info(f"📅 Rango de fechas: {start_date} → {end_date}")
+    
+        try:
+            # Validar fechas
+            if not validate_date_range(start_date, end_date):
+                raise ValidationError(f"Rango de fechas inválido: {start_date} → {end_date}")
+    
+            # Ejecutar pasos con retry logic
+            raw_data = self._scrape_step_with_retry(start_date, end_date)
+            processed_data = self._process_step_with_retry(raw_data)
+>           output_file = self._save_step_with_retry(processed_data)
+
+common/base_scraper.py:210: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4ba6a7a60>
+processed_data = [{'animal': 'LEON', 'fecha': '2025-01-15', 'numero': '05', 'validado': True}]
+
+    def _save_step_with_retry(self, processed_data: List[Dict[str, Any]]) -> Path:
+        """Paso 3: Guardado con retry logic."""
+        if not processed_data:
+            self.logger.warning("⚠ No hay datos procesados para guardar")
+            return None
+    
+        last_error = None
+    
+        for attempt in range(self.max_retries + 1):
+            try:
+                self.logger.info(f"💾 Intento {attempt + 1} de guardado")
+    
+                output_file = self.save_data(processed_data, output_format="json")
+    
+                if output_file and output_file.exists():
+                    file_size = get_file_size_mb(output_file)
+                    self.logger.info(f"✅ Datos guardados en {output_file} ({file_size}MB)")
+                    return output_file
+                else:
+                    raise SavingError("El archivo no se creó correctamente")
+    
+            except Exception as e:
+                last_error = e
+                self.logger.warning(f"⚠ Intento {attempt + 1} de guardado falló: {str(e)}")
+    
+                if attempt < self.max_retries:
+                    delay = self.retry_delay * (2 ** attempt)
+                    self.logger.info(f"⏳ Reintentando en {delay:.1f} segundos...")
+                    time.sleep(delay)
+                else:
+                    self.logger.error("❌ Todos los intentos de guardado fallaron")
+    
+>       raise SavingError(f"Guardado falló después de {self.max_retries + 1} intentos") from last_error
+E       common.base_scraper.SavingError: Guardado falló después de 2 intentos
+
+common/base_scraper.py:341: SavingError
+
+The above exception was the direct cause of the following exception:
+
+self = <test_lotto_activo_scraper.TestLottoActivoScraper object at 0x7fe4bb501870>
+mock_save = <MagicMock name='save_data' id='140620356810688'>
+mock_process = <MagicMock name='process_data' id='140620356802480'>
+mock_scrape = <MagicMock name='scrape_data' id='140620358350448'>
+
+    @patch('lotto_activo.scraper.LottoActivoScraper.scrape_data')
+    @patch('lotto_activo.scraper.LottoActivoScraper.process_data')
+    @patch('lotto_activo.scraper.LottoActivoScraper.save_data')
+    def test_run_success(self, mock_save, mock_process, mock_scrape):
+        """Test successful complete run."""
+        # Mock return values
+        mock_scrape.return_value = [{"fecha": "2025-01-15", "numero": "05", "animal": "LEON"}]
+        mock_process.return_value = [{"fecha": "2025-01-15", "numero": "05", "animal": "LEON", "validado": True}]
+        mock_save.return_value = Path("test_output.json")
+    
+>       result = self.scraper.run("2025-01-15", "2025-01-16")
+
+tests/test_lotto_activo_scraper.py:286: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4ba6a7a60>
+start_date = '2025-01-15', end_date = '2025-01-16'
+
+    def run(self, start_date: str, end_date: str) -> Dict[str, Any]:
+        """
+        Orquesta el flujo completo del scraper con manejo robusto de errores.
+    
+        Args:
+            start_date: Fecha de inicio (YYYY-MM-DD)
+            end_date: Fecha de fin (YYYY-MM-DD)
+    
+        Returns:
+            Diccionario con métricas y resultados del scraping
+    
+        Raises:
+            ScraperError: Si hay error crítico durante la ejecución
+        """
+        self.start_time = datetime.now()
+        self.logger.info(f"🚀 Iniciando scraping para {self.name}")
+        self.logger.info(f"📅 Rango de fechas: {start_date} → {end_date}")
+    
+        try:
+            # Validar fechas
+            if not validate_date_range(start_date, end_date):
+                raise ValidationError(f"Rango de fechas inválido: {start_date} → {end_date}")
+    
+            # Ejecutar pasos con retry logic
+            raw_data = self._scrape_step_with_retry(start_date, end_date)
+            processed_data = self._process_step_with_retry(raw_data)
+            output_file = self._save_step_with_retry(processed_data)
+    
+            # Calcular métricas finales
+            self.end_time = datetime.now()
+            metrics = self._calculate_metrics(output_file)
+    
+            self.logger.info(f"🏁 Flujo completado con éxito para {self.name}")
+            self.logger.info(f"📊 Métricas: {metrics}")
+    
+            return metrics
+    
+        except Exception as e:
+            self.end_time = datetime.now()
+            error_msg = f"Error durante la ejecución: {str(e)}"
+            self.logger.error(f"💥 {error_msg}", exc_info=True)
+>           raise ScraperError(error_msg) from e
+E           common.base_scraper.ScraperError: Error durante la ejecución: Guardado falló después de 2 intentos
+
+common/base_scraper.py:225: ScraperError
+------------------------------ Captured log call -------------------------------
+INFO     test-lotto-activo:base_scraper.py:199 🚀 Iniciando scraping para test-lotto-activo
+INFO     test-lotto-activo:base_scraper.py:200 📅 Rango de fechas: 2025-01-15 → 2025-01-16
+INFO     test-lotto-activo:base_scraper.py:236 📥 Intento 1 de scraping
+INFO     test-lotto-activo:base_scraper.py:253 ✅ 1 registros extraídos exitosamente
+INFO     test-lotto-activo:base_scraper.py:278 🔄 Intento 1 de procesamiento
+INFO     test-lotto-activo:base_scraper.py:293 ✅ 1 registros procesados exitosamente
+INFO     test-lotto-activo:base_scraper.py:319 💾 Intento 1 de guardado
+WARNING  test-lotto-activo:base_scraper.py:332 ⚠ Intento 1 de guardado falló: El archivo no se creó correctamente
+INFO     test-lotto-activo:base_scraper.py:336 ⏳ Reintentando en 0.1 segundos...
+INFO     test-lotto-activo:base_scraper.py:319 💾 Intento 2 de guardado
+WARNING  test-lotto-activo:base_scraper.py:332 ⚠ Intento 2 de guardado falló: El archivo no se creó correctamente
+ERROR    test-lotto-activo:base_scraper.py:339 ❌ Todos los intentos de guardado fallaron
+ERROR    test-lotto-activo:base_scraper.py:224 💥 Error durante la ejecución: Guardado falló después de 2 intentos
+Traceback (most recent call last):
+  File "/home/ele/Documentos/AlexisEdMata/Proyectos_desde_Github/data-pipeline/common/base_scraper.py", line 328, in _save_step_with_retry
+    raise SavingError("El archivo no se creó correctamente")
+common.base_scraper.SavingError: El archivo no se creó correctamente
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ele/Documentos/AlexisEdMata/Proyectos_desde_Github/data-pipeline/common/base_scraper.py", line 210, in run
+    output_file = self._save_step_with_retry(processed_data)
+  File "/home/ele/Documentos/AlexisEdMata/Proyectos_desde_Github/data-pipeline/common/base_scraper.py", line 341, in _save_step_with_retry
+    raise SavingError(f"Guardado falló después de {self.max_retries + 1} intentos") from last_error
+common.base_scraper.SavingError: Guardado falló después de 2 intentos
+__________ TestLottoActivoScraperIntegration.test_full_workflow_mock ___________
+
+self = <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4bac8b190>
+processed_data = [{'animal': 'LEON', 'fecha': '2025-01-15', 'numero': '05', 'validado': True}]
+
+    def _save_step_with_retry(self, processed_data: List[Dict[str, Any]]) -> Path:
+        """Paso 3: Guardado con retry logic."""
+        if not processed_data:
+            self.logger.warning("⚠ No hay datos procesados para guardar")
+            return None
+    
+        last_error = None
+    
+        for attempt in range(self.max_retries + 1):
+            try:
+                self.logger.info(f"💾 Intento {attempt + 1} de guardado")
+    
+                output_file = self.save_data(processed_data, output_format="json")
+    
+                if output_file and output_file.exists():
+                    file_size = get_file_size_mb(output_file)
+                    self.logger.info(f"✅ Datos guardados en {output_file} ({file_size}MB)")
+                    return output_file
+                else:
+>                   raise SavingError("El archivo no se creó correctamente")
+E                   common.base_scraper.SavingError: El archivo no se creó correctamente
+
+common/base_scraper.py:328: SavingError
+
+The above exception was the direct cause of the following exception:
+
+self = <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4bac8b190>
+start_date = '2025-01-15', end_date = '2025-01-16'
+
+    def run(self, start_date: str, end_date: str) -> Dict[str, Any]:
+        """
+        Orquesta el flujo completo del scraper con manejo robusto de errores.
+    
+        Args:
+            start_date: Fecha de inicio (YYYY-MM-DD)
+            end_date: Fecha de fin (YYYY-MM-DD)
+    
+        Returns:
+            Diccionario con métricas y resultados del scraping
+    
+        Raises:
+            ScraperError: Si hay error crítico durante la ejecución
+        """
+        self.start_time = datetime.now()
+        self.logger.info(f"🚀 Iniciando scraping para {self.name}")
+        self.logger.info(f"📅 Rango de fechas: {start_date} → {end_date}")
+    
+        try:
+            # Validar fechas
+            if not validate_date_range(start_date, end_date):
+                raise ValidationError(f"Rango de fechas inválido: {start_date} → {end_date}")
+    
+            # Ejecutar pasos con retry logic
+            raw_data = self._scrape_step_with_retry(start_date, end_date)
+            processed_data = self._process_step_with_retry(raw_data)
+>           output_file = self._save_step_with_retry(processed_data)
+
+common/base_scraper.py:210: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4bac8b190>
+processed_data = [{'animal': 'LEON', 'fecha': '2025-01-15', 'numero': '05', 'validado': True}]
+
+    def _save_step_with_retry(self, processed_data: List[Dict[str, Any]]) -> Path:
+        """Paso 3: Guardado con retry logic."""
+        if not processed_data:
+            self.logger.warning("⚠ No hay datos procesados para guardar")
+            return None
+    
+        last_error = None
+    
+        for attempt in range(self.max_retries + 1):
+            try:
+                self.logger.info(f"💾 Intento {attempt + 1} de guardado")
+    
+                output_file = self.save_data(processed_data, output_format="json")
+    
+                if output_file and output_file.exists():
+                    file_size = get_file_size_mb(output_file)
+                    self.logger.info(f"✅ Datos guardados en {output_file} ({file_size}MB)")
+                    return output_file
+                else:
+                    raise SavingError("El archivo no se creó correctamente")
+    
+            except Exception as e:
+                last_error = e
+                self.logger.warning(f"⚠ Intento {attempt + 1} de guardado falló: {str(e)}")
+    
+                if attempt < self.max_retries:
+                    delay = self.retry_delay * (2 ** attempt)
+                    self.logger.info(f"⏳ Reintentando en {delay:.1f} segundos...")
+                    time.sleep(delay)
+                else:
+                    self.logger.error("❌ Todos los intentos de guardado fallaron")
+    
+>       raise SavingError(f"Guardado falló después de {self.max_retries + 1} intentos") from last_error
+E       common.base_scraper.SavingError: Guardado falló después de 2 intentos
+
+common/base_scraper.py:341: SavingError
+
+The above exception was the direct cause of the following exception:
+
+self = <test_lotto_activo_scraper.TestLottoActivoScraperIntegration object at 0x7fe4bb5014b0>
+
+    def test_full_workflow_mock(self):
+        """Test complete workflow with mocked data."""
+        scraper = LottoActivoScraper(
+            name="integration-test",
+            url="https://test-url.com/lotto/{start}/{end}/",
+            max_retries=1,
+            retry_delay=0.1
+        )
+    
+        try:
+            # Mock the entire scraping process
+            with patch.object(scraper, 'scrape_data') as mock_scrape, \
+                 patch.object(scraper, 'process_data') as mock_process, \
+                 patch.object(scraper, 'save_data') as mock_save:
+    
+                # Setup mocks
+                mock_scrape.return_value = [{"fecha": "2025-01-15", "numero": "05", "animal": "LEON"}]
+                mock_process.return_value = [{"fecha": "2025-01-15", "numero": "05", "animal": "LEON", "validado": True}]
+                mock_save.return_value = Path("test_output.json")
+    
+                # Run the scraper
+>               result = scraper.run("2025-01-15", "2025-01-16")
+
+tests/test_lotto_activo_scraper.py:373: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4bac8b190>
+start_date = '2025-01-15', end_date = '2025-01-16'
+
+    def run(self, start_date: str, end_date: str) -> Dict[str, Any]:
+        """
+        Orquesta el flujo completo del scraper con manejo robusto de errores.
+    
+        Args:
+            start_date: Fecha de inicio (YYYY-MM-DD)
+            end_date: Fecha de fin (YYYY-MM-DD)
+    
+        Returns:
+            Diccionario con métricas y resultados del scraping
+    
+        Raises:
+            ScraperError: Si hay error crítico durante la ejecución
+        """
+        self.start_time = datetime.now()
+        self.logger.info(f"🚀 Iniciando scraping para {self.name}")
+        self.logger.info(f"📅 Rango de fechas: {start_date} → {end_date}")
+    
+        try:
+            # Validar fechas
+            if not validate_date_range(start_date, end_date):
+                raise ValidationError(f"Rango de fechas inválido: {start_date} → {end_date}")
+    
+            # Ejecutar pasos con retry logic
+            raw_data = self._scrape_step_with_retry(start_date, end_date)
+            processed_data = self._process_step_with_retry(raw_data)
+            output_file = self._save_step_with_retry(processed_data)
+    
+            # Calcular métricas finales
+            self.end_time = datetime.now()
+            metrics = self._calculate_metrics(output_file)
+    
+            self.logger.info(f"🏁 Flujo completado con éxito para {self.name}")
+            self.logger.info(f"📊 Métricas: {metrics}")
+    
+            return metrics
+    
+        except Exception as e:
+            self.end_time = datetime.now()
+            error_msg = f"Error durante la ejecución: {str(e)}"
+            self.logger.error(f"💥 {error_msg}", exc_info=True)
+>           raise ScraperError(error_msg) from e
+E           common.base_scraper.ScraperError: Error durante la ejecución: Guardado falló después de 2 intentos
+
+common/base_scraper.py:225: ScraperError
+------------------------------ Captured log call -------------------------------
+INFO     integration-test:base_scraper.py:199 🚀 Iniciando scraping para integration-test
+INFO     integration-test:base_scraper.py:200 📅 Rango de fechas: 2025-01-15 → 2025-01-16
+INFO     integration-test:base_scraper.py:236 📥 Intento 1 de scraping
+INFO     integration-test:base_scraper.py:253 ✅ 1 registros extraídos exitosamente
+INFO     integration-test:base_scraper.py:278 🔄 Intento 1 de procesamiento
+INFO     integration-test:base_scraper.py:293 ✅ 1 registros procesados exitosamente
+INFO     integration-test:base_scraper.py:319 💾 Intento 1 de guardado
+WARNING  integration-test:base_scraper.py:332 ⚠ Intento 1 de guardado falló: El archivo no se creó correctamente
+INFO     integration-test:base_scraper.py:336 ⏳ Reintentando en 0.1 segundos...
+INFO     integration-test:base_scraper.py:319 💾 Intento 2 de guardado
+WARNING  integration-test:base_scraper.py:332 ⚠ Intento 2 de guardado falló: El archivo no se creó correctamente
+ERROR    integration-test:base_scraper.py:339 ❌ Todos los intentos de guardado fallaron
+ERROR    integration-test:base_scraper.py:224 💥 Error durante la ejecución: Guardado falló después de 2 intentos
+Traceback (most recent call last):
+  File "/home/ele/Documentos/AlexisEdMata/Proyectos_desde_Github/data-pipeline/common/base_scraper.py", line 328, in _save_step_with_retry
+    raise SavingError("El archivo no se creó correctamente")
+common.base_scraper.SavingError: El archivo no se creó correctamente
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ele/Documentos/AlexisEdMata/Proyectos_desde_Github/data-pipeline/common/base_scraper.py", line 210, in run
+    output_file = self._save_step_with_retry(processed_data)
+  File "/home/ele/Documentos/AlexisEdMata/Proyectos_desde_Github/data-pipeline/common/base_scraper.py", line 341, in _save_step_with_retry
+    raise SavingError(f"Guardado falló después de {self.max_retries + 1} intentos") from last_error
+common.base_scraper.SavingError: Guardado falló después de 2 intentos
+_________ TestLottoActivoScraperIntegration.test_error_handling_chain __________
+
+self = <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4ba82f790>
+start_date = '2025-01-15', end_date = '2025-01-16'
+
+    def _scrape_step_with_retry(self, start_date: str, end_date: str) -> List[Dict[str, Any]]:
+        """Paso 1: Scraping con retry logic."""
+        last_error = None
+    
+        for attempt in range(self.max_retries + 1):
+            try:
+                self.logger.info(f"📥 Intento {attempt + 1} de scraping")
+    
+>               data = self.scrape_data(start_date, end_date)
+
+common/base_scraper.py:238: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.10/unittest/mock.py:1114: in __call__
+    return self._mock_call(*args, **kwargs)
+/usr/lib/python3.10/unittest/mock.py:1118: in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+/usr/lib/python3.10/unittest/mock.py:1173: in _execute_mock_call
+    raise effect
+common/base_scraper.py:238: in _scrape_step_with_retry
+    data = self.scrape_data(start_date, end_date)
+/usr/lib/python3.10/unittest/mock.py:1114: in __call__
+    return self._mock_call(*args, **kwargs)
+/usr/lib/python3.10/unittest/mock.py:1118: in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <MagicMock name='scrape_data' id='140620358413152'>
+args = ('2025-01-15', '2025-01-16'), kwargs = {}
+effect = ScrapingError('Test error')
+
+    def _execute_mock_call(self, /, *args, **kwargs):
+        # separate from _increment_mock_call so that awaited functions are
+        # executed separately from their call, also AsyncMock overrides this method
+    
+        effect = self.side_effect
+        if effect is not None:
+            if _is_exception(effect):
+>               raise effect
+E               common.base_scraper.ScrapingError: Test error
+
+/usr/lib/python3.10/unittest/mock.py:1173: ScrapingError
+
+The above exception was the direct cause of the following exception:
+
+self = <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4ba82f790>
+start_date = '2025-01-15', end_date = '2025-01-16'
+
+    def run(self, start_date: str, end_date: str) -> Dict[str, Any]:
+        """
+        Orquesta el flujo completo del scraper con manejo robusto de errores.
+    
+        Args:
+            start_date: Fecha de inicio (YYYY-MM-DD)
+            end_date: Fecha de fin (YYYY-MM-DD)
+    
+        Returns:
+            Diccionario con métricas y resultados del scraping
+    
+        Raises:
+            ScraperError: Si hay error crítico durante la ejecución
+        """
+        self.start_time = datetime.now()
+        self.logger.info(f"🚀 Iniciando scraping para {self.name}")
+        self.logger.info(f"📅 Rango de fechas: {start_date} → {end_date}")
+    
+        try:
+            # Validar fechas
+            if not validate_date_range(start_date, end_date):
+                raise ValidationError(f"Rango de fechas inválido: {start_date} → {end_date}")
+    
+            # Ejecutar pasos con retry logic
+>           raw_data = self._scrape_step_with_retry(start_date, end_date)
+
+common/base_scraper.py:208: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4ba82f790>
+start_date = '2025-01-15', end_date = '2025-01-16'
+
+    def _scrape_step_with_retry(self, start_date: str, end_date: str) -> List[Dict[str, Any]]:
+        """Paso 1: Scraping con retry logic."""
+        last_error = None
+    
+        for attempt in range(self.max_retries + 1):
+            try:
+                self.logger.info(f"📥 Intento {attempt + 1} de scraping")
+    
+                data = self.scrape_data(start_date, end_date)
+    
+                if not data:
+                    self.logger.warning("📭 No se encontraron datos en el rango especificado")
+                    return []
+    
+                # Validar tamaño de datos
+                data_size = len(str(data)) / (1024 * 1024)  # Aproximación en MB
+                if data_size > self.max_data_size_mb:
+                    raise ScrapingError(
+                        f"Datos demasiado grandes: {data_size:.2f}MB > {self.max_data_size_mb}MB"
+                    )
+    
+                self.raw_data = data
+                self.total_records = len(data)
+                self.logger.info(f"✅ {len(data)} registros extraídos exitosamente")
+                return data
+    
+            except Exception as e:
+                last_error = e
+                self.logger.warning(f"⚠ Intento {attempt + 1} falló: {str(e)}")
+    
+                if attempt < self.max_retries:
+                    delay = self.retry_delay * (2 ** attempt)  # Backoff exponencial
+                    self.logger.info(f"⏳ Reintentando en {delay:.1f} segundos...")
+                    time.sleep(delay)
+                else:
+                    self.logger.error("❌ Todos los intentos de scraping fallaron")
+    
+>       raise ScrapingError(f"Scraping falló después de {self.max_retries + 1} intentos") from last_error
+E       common.base_scraper.ScrapingError: Scraping falló después de 2 intentos
+
+common/base_scraper.py:267: ScrapingError
+
+The above exception was the direct cause of the following exception:
+
+self = <test_lotto_activo_scraper.TestLottoActivoScraperIntegration object at 0x7fe4bb500b20>
+
+    def test_error_handling_chain(self):
+        """Test error handling throughout the chain."""
+        scraper = LottoActivoScraper(
+            name="error-test",
+            url="https://test-url.com/lotto/{start}/{end}/",
+            max_retries=1,
+            retry_delay=0.1
+        )
+    
+        try:
+            # Test scraping error
+            with patch.object(scraper, 'scrape_data', side_effect=ScrapingError("Test error")):
+                with pytest.raises(ScrapingError):
+>                   scraper.run("2025-01-15", "2025-01-16")
+
+tests/test_lotto_activo_scraper.py:400: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <lotto_activo.scraper.LottoActivoScraper object at 0x7fe4ba82f790>
+start_date = '2025-01-15', end_date = '2025-01-16'
+
+    def run(self, start_date: str, end_date: str) -> Dict[str, Any]:
+        """
+        Orquesta el flujo completo del scraper con manejo robusto de errores.
+    
+        Args:
+            start_date: Fecha de inicio (YYYY-MM-DD)
+            end_date: Fecha de fin (YYYY-MM-DD)
+    
+        Returns:
+            Diccionario con métricas y resultados del scraping
+    
+        Raises:
+            ScraperError: Si hay error crítico durante la ejecución
+        """
+        self.start_time = datetime.now()
+        self.logger.info(f"🚀 Iniciando scraping para {self.name}")
+        self.logger.info(f"📅 Rango de fechas: {start_date} → {end_date}")
+    
+        try:
+            # Validar fechas
+            if not validate_date_range(start_date, end_date):
+                raise ValidationError(f"Rango de fechas inválido: {start_date} → {end_date}")
+    
+            # Ejecutar pasos con retry logic
+            raw_data = self._scrape_step_with_retry(start_date, end_date)
+            processed_data = self._process_step_with_retry(raw_data)
+            output_file = self._save_step_with_retry(processed_data)
+    
+            # Calcular métricas finales
+            self.end_time = datetime.now()
+            metrics = self._calculate_metrics(output_file)
+    
+            self.logger.info(f"🏁 Flujo completado con éxito para {self.name}")
+            self.logger.info(f"📊 Métricas: {metrics}")
+    
+            return metrics
+    
+        except Exception as e:
+            self.end_time = datetime.now()
+            error_msg = f"Error durante la ejecución: {str(e)}"
+            self.logger.error(f"💥 {error_msg}", exc_info=True)
+>           raise ScraperError(error_msg) from e
+E           common.base_scraper.ScraperError: Error durante la ejecución: Scraping falló después de 2 intentos
+
+common/base_scraper.py:225: ScraperError
+------------------------------ Captured log call -------------------------------
+INFO     error-test:base_scraper.py:199 🚀 Iniciando scraping para error-test
+INFO     error-test:base_scraper.py:200 📅 Rango de fechas: 2025-01-15 → 2025-01-16
+INFO     error-test:base_scraper.py:236 📥 Intento 1 de scraping
+WARNING  error-test:base_scraper.py:258 ⚠ Intento 1 falló: Test error
+INFO     error-test:base_scraper.py:262 ⏳ Reintentando en 0.1 segundos...
+INFO     error-test:base_scraper.py:236 📥 Intento 2 de scraping
+WARNING  error-test:base_scraper.py:258 ⚠ Intento 2 falló: Test error
+ERROR    error-test:base_scraper.py:265 ❌ Todos los intentos de scraping fallaron
+ERROR    error-test:base_scraper.py:224 💥 Error durante la ejecución: Scraping falló después de 2 intentos
+Traceback (most recent call last):
+  File "/home/ele/Documentos/AlexisEdMata/Proyectos_desde_Github/data-pipeline/common/base_scraper.py", line 238, in _scrape_step_with_retry
+    data = self.scrape_data(start_date, end_date)
+  File "/usr/lib/python3.10/unittest/mock.py", line 1114, in __call__
+    return self._mock_call(*args, **kwargs)
+  File "/usr/lib/python3.10/unittest/mock.py", line 1118, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+  File "/usr/lib/python3.10/unittest/mock.py", line 1173, in _execute_mock_call
+    raise effect
+  File "/home/ele/Documentos/AlexisEdMata/Proyectos_desde_Github/data-pipeline/common/base_scraper.py", line 238, in _scrape_step_with_retry
+    data = self.scrape_data(start_date, end_date)
+  File "/usr/lib/python3.10/unittest/mock.py", line 1114, in __call__
+    return self._mock_call(*args, **kwargs)
+  File "/usr/lib/python3.10/unittest/mock.py", line 1118, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+  File "/usr/lib/python3.10/unittest/mock.py", line 1173, in _execute_mock_call
+    raise effect
+common.base_scraper.ScrapingError: Test error
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ele/Documentos/AlexisEdMata/Proyectos_desde_Github/data-pipeline/common/base_scraper.py", line 208, in run
+    raw_data = self._scrape_step_with_retry(start_date, end_date)
+  File "/home/ele/Documentos/AlexisEdMata/Proyectos_desde_Github/data-pipeline/common/base_scraper.py", line 267, in _scrape_step_with_retry
+    raise ScrapingError(f"Scraping falló después de {self.max_retries + 1} intentos") from last_error
+common.base_scraper.ScrapingError: Scraping falló después de 2 intentos
+=========================== short test summary info ============================
+FAILED tests/test_historical_loader.py::test_load_last_year - TypeError: isin...
+FAILED tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_clean_number_invalid
+FAILED tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_clean_animal_valid
+FAILED tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_process_single_item_invalid
+FAILED tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_scrape_data_network_error
+FAILED tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_save_data_empty
+FAILED tests/test_lotto_activo_scraper.py::TestLottoActivoScraper::test_run_success
+FAILED tests/test_lotto_activo_scraper.py::TestLottoActivoScraperIntegration::test_full_workflow_mock
+FAILED tests/test_lotto_activo_scraper.py::TestLottoActivoScraperIntegration::test_error_handling_chain
+========================= 9 failed, 57 passed in 8.52s =========================
