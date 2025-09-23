@@ -1,6 +1,8 @@
 # data-pipeline/test/conftest.py
 
 import pytest
+import sys
+from pathlib import Path
 import common.config as config
 
 @pytest.fixture(autouse=True)
@@ -10,6 +12,9 @@ def patch_config_dirs(tmp_path, monkeypatch):
     para que todas las pruebas usen carpetas temporales.
     Esto evita que los tests escriban en los directorios reales del proyecto.
     """
+    
+    # Crea una ruta temporal para cada directorio
+    sys.path.append(str(Path(__file__).resolve().parent.parent))
     temp_logs = tmp_path / "logs"
     temp_outputs = tmp_path / "outputs"
     temp_data = tmp_path / "data"
