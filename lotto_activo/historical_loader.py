@@ -35,7 +35,7 @@ class HistoricalLoader:
     """Carga histórica de datos de Lotto Activo - Versión extendida para data-pipeline
     Extrae datos semanales del último año y genera un JSON consolidado."""
 
-    def __init__(self, source="LOTERIADEHOY", output_file=None):
+    def __init__(self, source="LOTERIADEHOY_HISTORICO", output_file=None):
         self.base_url = RESULTADOS_URLS[source]
         self.output_file = Path(output_file) if output_file else None
         # No creamos directorios aquí para evitar efectos secundarios innecesarios
