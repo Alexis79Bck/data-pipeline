@@ -262,7 +262,7 @@ class BaseScraper(ABC):
                     self.logger.info(f"⏳ Reintentando en {delay:.1f} segundos...")
                     time.sleep(delay)
                 else:
-                    self.logger.error(f"❌ Todos los intentos de scraping fallaron")
+                    self.logger.error("❌ Todos los intentos de scraping fallaron")
         
         raise ScrapingError(f"Scraping falló después de {self.max_retries + 1} intentos") from last_error
 
@@ -302,7 +302,7 @@ class BaseScraper(ABC):
                     self.logger.info(f"⏳ Reintentando en {delay:.1f} segundos...")
                     time.sleep(delay)
                 else:
-                    self.logger.error(f"❌ Todos los intentos de procesamiento fallaron")
+                    self.logger.error("❌ Todos los intentos de procesamiento fallaron")
         
         raise ProcessingError(f"Procesamiento falló después de {self.max_retries + 1} intentos") from last_error
 
@@ -336,7 +336,7 @@ class BaseScraper(ABC):
                     self.logger.info(f"⏳ Reintentando en {delay:.1f} segundos...")
                     time.sleep(delay)
                 else:
-                    self.logger.error(f"❌ Todos los intentos de guardado fallaron")
+                    self.logger.error("❌ Todos los intentos de guardado fallaron")
         
         raise SavingError(f"Guardado falló después de {self.max_retries + 1} intentos") from last_error
 
