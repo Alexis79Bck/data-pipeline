@@ -86,38 +86,49 @@ class DailyDrawsFetcher:
         results = []
         for block in blocks:
             try:
-                img = block.find("img")["src"] if block.find("img") else None
-                title = (
-                    block.find("h4").get_text(strip=True) if block.find("h4") else None
-                )
-                schedule = (
-                    block.find("h5").get_text(strip=True) if block.find("h5") else None
-                )
+                # 🎯 1. Verificar que sea un bloque válido de resultado
+                # (Debe contener un <h4> con número y animal, y un <h5> con hora)
+                title_el = block.find("h4")
+                schedule_el = block.find("h5")
 
-                if title and schedule:
-                    
-                    parts = title.split(" ", 1)
-                    numero = parts[0]
-                    animal = parts[1] if len(parts) > 1 else None
+                if not title_el or not schedule_el:
+                    logging.debug("Bloque descartado: no contiene título o horario")
+                    continue
 
-                    results.append(
-                        {
-                            "sorteo": {
-                                "fecha": safe_date,
+                title = title_el.get_text(strip=True)
+                schedule = schedule_el.get_text(strip=True)
+
+                # 🎯 2. Parsear el título: formato esperado "34 Venado"
+                parts = title.split(" ", 1)
+                if len(parts) < 2 or not parts[0].isdigit():
+                    logging.debug(f"Bloque descartado: título inválido ({title})")
+                    continue
+
+                numero = parts[0]
+                animal = parts[1].title()
+
+                # 🎯 3. Imagen (opcional, puede faltar sin romper el parser)
+                img_el = block.find("img")
+                img = img_el["src"] if img_el and img_el.has_attr("src") else None
+
+                results.append(
+                    {
+                        "sorteo": {
+                               "fecha": safe_date,
                                 "hora": schedule,
                                 "animal": animal,
                                 "numero": numero,
                                 "imagen": img,
                             },
-                            "fuente_scraper": {
+                        "fuente_scraper": {
                                 "url_fuente": self.base_url.format(date=safe_date),
                                 "fecha": safe_date,
                             },
-                            "script": "daily_draws_results",
-                            "procesado_el": datetime.now().isoformat(),
-                            "validado": numero is not None,
-                        }
-                    )
+                        "script": "daily_draws_results",
+                        "procesado_el": datetime.now().isoformat(),
+                        "validado": numero is not None,
+                    }
+                )
             except Exception as e:
                 logging.warning("Error procesando un bloque: %s", e)
         return results
