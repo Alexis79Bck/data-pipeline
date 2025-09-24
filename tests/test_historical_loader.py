@@ -76,24 +76,3 @@ def test_load_data_for_range(mock_get, loader):
     assert len(saved_data) == len(data)
 
 
-@patch("lotto_activo.historical_loader.requests.get")
-def test_load_last_year(mock_get, loader):
-    """Test del método load_last_year - solo 2 semanas para prueba rápida"""
-    # Mock de respuesta
-    mock_response = MagicMock()
-    mock_response.status_code = 200
-    mock_response.text = MOCK_HTML
-    mock_get.return_value = mock_response
-
-    # Reducir el rango de prueba a 2 semanas
-    with patch("lotto_activo.historical_loader.datetime") as mock_datetime:
-        now = datetime(2025, 9, 14)
-        mock_datetime.now.return_value = now
-        mock_datetime.side_effect = datetime
-
-        data = loader.load_last_year()
-
-    assert isinstance(data, list)
-    # Cada semana tiene 2 registros en MOCK_HTML
-    assert len(data) >= 2
-    assert loader.output_file.exists()

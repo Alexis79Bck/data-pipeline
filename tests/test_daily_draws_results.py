@@ -85,21 +85,22 @@ def test_fetch_for_date_returns_results(mock_get, fetcher, tmp_path):
     mock_response.text = MOCK_HTML
     mock_get.return_value = mock_response
 
-    test_date = datetime(2025, 9, 22).date()
+    test_date = datetime(2025, 8, 3).date()
     results = fetcher.fetch_for_date(test_date)
 
     # Validaciones
     assert isinstance(results, list)
-    assert len(results) == 2  # solo hay 2 bloques en el MOCK_HTML
+    assert len(results) == 6  # solo hay 6 bloques en el MOCK_HTML
 
     # Validar estructura del primer resultado
     first = results[0]
     assert "sorteo" in first
     assert "fuente_scraper" in first
+    assert "validado" in first
 
     # Verificar contenido del sorteo
     sorteo = first["sorteo"]
-    assert sorteo["fecha"] == "2025-09-22"
+    assert sorteo["fecha"] == "2025-08-03"
     assert sorteo["animal"] in ["Mono", "Carnero"]
     assert sorteo["numero"] in ["13", "1"]
     assert "hora" in sorteo
@@ -108,8 +109,10 @@ def test_fetch_for_date_returns_results(mock_get, fetcher, tmp_path):
     # Verificar metadatos
     fuente = first["fuente_scraper"]
     assert "url_fuente" in fuente
-    assert fuente["script"] == "daily_draws_results"
     assert "procesado_el" in fuente
+    assert "script" in fuente
+    assert fuente["script"] == "daily_draws_results"
+    assert first["validado"] is True
 
 
 @patch("requests.get")

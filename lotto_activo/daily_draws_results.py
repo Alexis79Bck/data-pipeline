@@ -123,9 +123,9 @@ class DailyDrawsFetcher:
                         "fuente_scraper": {
                                 "url_fuente": self.base_url.format(date=safe_date),
                                 "fecha": safe_date,
+                                "script": "daily_draws_results",
+                                "procesado_el": datetime.now().isoformat(),
                             },
-                        "script": "daily_draws_results",
-                        "procesado_el": datetime.now().isoformat(),
                         "validado": numero is not None,
                     }
                 )
