@@ -45,7 +45,8 @@ DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 # URLs base de scraping
 RESULTADOS_URLS = {
-    "LOTERIADEHOY": "https://loteriadehoy.com/animalito/lottoactivo/historico/{start}/{end}/",
+    "LOTERIADEHOY_HISTORICO": "https://loteriadehoy.com/animalito/lottoactivo/historico/{start}/{end}/",
+    "LOTERIADEHOY_DIARIO": "https://loteriadehoy.com/animalito/lottoactivo/resultados/{date}/",
     "LOTTOACTIVO": "https://lottoactivo.com/historial/lotto_activo/{start}/{end}/",
 }
 
