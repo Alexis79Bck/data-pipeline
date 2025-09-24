@@ -110,6 +110,30 @@ class DailyDrawsFetcher:
                 # 🎯 3. Imagen (opcional, puede faltar sin romper el parser)
                 img_el = block.find("img")
                 img = img_el["src"] if img_el and img_el.has_attr("src") else None
+                # 🎯 1. Verificar que sea un bloque válido de resultado
+                # (Debe contener un <h4> con número y animal, y un <h5> con hora)
+                title_el = block.find("h4")
+                schedule_el = block.find("h5")
+
+                if not title_el or not schedule_el:
+                    logging.debug("Bloque descartado: no contiene título o horario")
+                    continue
+
+                title = title_el.get_text(strip=True)
+                schedule = schedule_el.get_text(strip=True)
+
+                # 🎯 2. Parsear el título: formato esperado "34 Venado"
+                parts = title.split(" ", 1)
+                if len(parts) < 2 or not parts[0].isdigit():
+                    logging.debug(f"Bloque descartado: título inválido ({title})")
+                    continue
+
+                numero = parts[0]
+                animal = parts[1].title()
+
+                # 🎯 3. Imagen (opcional, puede faltar sin romper el parser)
+                img_el = block.find("img")
+                img = img_el["src"] if img_el and img_el.has_attr("src") else None
 
                 results.append(
                     {
