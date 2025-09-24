@@ -19,8 +19,7 @@ from common.config import (
     DATE_FORMAT,
     OUTPUTS_DIR,
     LOGS_DIR,
-    DEFAULT_HEADERS,
-    ANIMALS_MAP,
+    DEFAULT_HEADERS, 
 )
 
 # Configurar logging básico
@@ -41,6 +40,9 @@ class DailyDrawsFetcher:
 
     def fetch_for_date(self, draw_date: str | datetime) -> List[Dict[str, Any]]:
         """Obtiene los resultados de un día específico"""
+        if not draw_date:
+            draw_date = datetime.now().date() - timedelta(days=1)
+        
         safe_date = self._sanitize_date(draw_date)
         url = self.base_url.format(date=safe_date)
 
@@ -52,7 +54,9 @@ class DailyDrawsFetcher:
             blocks = soup.find_all("div", class_="col-sm-6")
 
             if not blocks:
-                logging.warning("No se encontraron resultados para la fecha %s", safe_date)
+                logging.warning(
+                    "No se encontraron resultados para la fecha %s", safe_date
+                )
                 print(f"⚠️ No se encontraron resultados para {safe_date}")
                 return []
 
@@ -83,22 +87,37 @@ class DailyDrawsFetcher:
         for block in blocks:
             try:
                 img = block.find("img")["src"] if block.find("img") else None
-                title = block.find("h4").get_text(strip=True) if block.find("h4") else None
-                schedule = block.find("h5").get_text(strip=True) if block.find("h5") else None
+                title = (
+                    block.find("h4").get_text(strip=True) if block.find("h4") else None
+                )
+                schedule = (
+                    block.find("h5").get_text(strip=True) if block.find("h5") else None
+                )
 
                 if title and schedule:
-                    # El título tiene formato "34 Venado"
+                    
                     parts = title.split(" ", 1)
-                    number = parts[0]
+                    numero = parts[0]
                     animal = parts[1] if len(parts) > 1 else None
 
-                    results.append({
-                        "date": safe_date,
-                        "number": number,
-                        "animal": animal,
-                        "schedule": schedule,
-                        "image": img,
-                    })
+                    results.append(
+                        {
+                            "sorteo": {
+                                "fecha": safe_date,
+                                "hora": schedule,
+                                "animal": animal,
+                                "numero": numero,
+                                "imagen": img,
+                            },
+                            "fuente_scraper": {
+                                "url_fuente": self.base_url.format(date=safe_date),
+                                "fecha": safe_date,
+                            },
+                            "script": "daily_draws_results",
+                            "procesado_el": datetime.now().isoformat(),
+                            "validado": numero is not None,
+                        }
+                    )
             except Exception as e:
                 logging.warning("Error procesando un bloque: %s", e)
         return results
@@ -108,7 +127,9 @@ class DailyDrawsFetcher:
         if not data:
             return
 
-        output_path = self.output_file or Path(OUTPUTS_DIR) / f"daily_results_{safe_date}.json"
+        output_path = (
+            self.output_file or Path(OUTPUTS_DIR) / f"daily_results_{safe_date}.json"
+        )
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
         with open(output_path, "w", encoding="utf-8") as f:
@@ -122,10 +143,8 @@ class DailyDrawsFetcher:
 # -------------------------
 if __name__ == "__main__":
     fetcher = DailyDrawsFetcher()
-    date_draws =  datetime.now().date() - timedelta(days=1)
+    date_draws = datetime.now().date() - timedelta(days=1)
     results = fetcher.fetch_for_date(date_draws)
     print(f"Se obtuvieron {len(results)} resultados para {date_draws:%Y-%m-%d}")
     if results:
         print(json.dumps(results, indent=2, ensure_ascii=False))
-
-
