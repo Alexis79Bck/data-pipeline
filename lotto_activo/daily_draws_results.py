@@ -1,13 +1,13 @@
-# lotto-activo/historical_loader.py
+# lotto-activo/daily-draws-results.py
 """
-Carga histórica de datos de Lotto Activo - Versión extendida para data-pipeline
-Extrae datos semanales del último año y genera un JSON consolidado.
+Obtencion de datos de Lotto Activo - Versión extendida para data-pipeline
+Extrae datos del dia y por dia determinado y genera un JSON consolidado.
 """
 
 import json
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Union
 import requests
 import logging
 from requests.exceptions import HTTPError, Timeout, RequestException
@@ -16,10 +16,11 @@ from bs4 import BeautifulSoup
 # Importaciones internas
 from common.config import (
     RESULTADOS_URLS,
-    DATA_DIR,
+    DATE_FORMAT,
+    OUTPUTS_DIR,
     LOGS_DIR,
     DEFAULT_HEADERS,
-    ANIMAL_TO_NUMBER,
+    ANIMALS_MAP,
 )
 
 # Configurar logging básico
@@ -48,14 +49,14 @@ class DailyDrawsFetcher:
             response.raise_for_status()
 
             soup = BeautifulSoup(response.text, "html.parser")
-            table = soup.find("table", {"id": "table"})
+            blocks = soup.find_all("div", class_="col-sm-6")
 
-            if not table:
-                logging.warning("No se encontró tabla para la fecha %s", safe_date)
-                print(f"⚠️ No se encontró tabla para {safe_date}")
+            if not blocks:
+                logging.warning("No se encontraron resultados para la fecha %s", safe_date)
+                print(f"⚠️ No se encontraron resultados para {safe_date}")
                 return []
 
-            data = self._extract_table_data(table, safe_date)
+            data = self._extract_blocks_data(blocks, safe_date)
             self._save_to_json(data, safe_date)
             return data
 
@@ -69,60 +70,62 @@ class DailyDrawsFetcher:
             logging.exception("Error inesperado en %s : %s", url, e)
         return []
 
-    def _extract_table_data(self, table, draw_date: str) -> List[Dict[str, Any]]:
-        """Extrae resultados diarios"""
-        data = []
-        hora_filas = table.select("tbody tr")
+    # -------------------------
+    # Métodos internos
+    # -------------------------
+    def _sanitize_date(self, draw_date: Union[str, datetime]) -> str:
+        if isinstance(draw_date, datetime):
+            return draw_date.strftime(DATE_FORMAT)
+        return str(draw_date)
 
-        for row in hora_filas:
-            hora = row.find("th").get_text(strip=True)
-            celda = row.find("td")  # Para diario, una sola columna
-            animal = celda.get_text(strip=True).title()
-            numero = ANIMAL_TO_NUMBER.get(animal.upper())
+    def _extract_blocks_data(self, blocks, safe_date: str) -> List[Dict[str, Any]]:
+        results = []
+        for block in blocks:
+            try:
+                img = block.find("img")["src"] if block.find("img") else None
+                title = block.find("h4").get_text(strip=True) if block.find("h4") else None
+                schedule = block.find("h5").get_text(strip=True) if block.find("h5") else None
 
-            registro = {
-                "sorteo": {
-                    "fecha": draw_date,
-                    "hora": hora,
-                    "animal": animal,
-                    "numero": numero,
-                },
-                "fuente_scraper": {
-                    "url_fuente": self.base_url.format(date=draw_date),
-                    "script": "daily_draws_results",
-                    "procesado_el": datetime.now().isoformat(),
-                    "validado": numero is not None,
-                },
-            }
-            data.append(registro)
+                if title and schedule:
+                    # El título tiene formato "34 Venado"
+                    parts = title.split(" ", 1)
+                    number = parts[0]
+                    animal = parts[1] if len(parts) > 1 else None
 
-        return data
+                    results.append({
+                        "date": safe_date,
+                        "number": number,
+                        "animal": animal,
+                        "schedule": schedule,
+                        "image": img,
+                    })
+            except Exception as e:
+                logging.warning("Error procesando un bloque: %s", e)
+        return results
 
-    def _sanitize_date(self, date_value: str | datetime) -> str:
-        if isinstance(date_value, datetime):
-            return date_value.strftime("%Y-%m-%d")
-        return str(date_value).split(" ")[0]
+    def _save_to_json(self, data: List[Dict[str, Any]], safe_date: str):
+        """Guarda resultados diarios en JSON"""
+        if not data:
+            return
 
-    def _get_output_path(self, draw_date: str) -> Path:
-        safe_date = self._sanitize_date(draw_date)
-        if self.output_file:
-            return self.output_file
-        return Path(DATA_DIR) / f"daily_data_{safe_date}.json"
+        output_path = self.output_file or Path(OUTPUTS_DIR) / f"daily_results_{safe_date}.json"
+        output_path.parent.mkdir(parents=True, exist_ok=True)
 
-    def _save_to_json(self, data, draw_date: str):
-        filename = self._get_output_path(draw_date)
-        filename.parent.mkdir(parents=True, exist_ok=True)
-        try:
-            with open(filename, "w", encoding="utf-8") as f:
-                json.dump(data, f, indent=2, ensure_ascii=False)
-            logging.info("Datos guardados en %s.", filename)
-            self.output_file = filename
-        except IOError as e:
-            logging.error("No se pudo guardar el archivo %s: %s", filename, e)
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
 
+        logging.info("Resultados diarios guardados en %s", output_path)
+
+
+# -------------------------
+# Ejecución directa
+# -------------------------
 if __name__ == "__main__":
     fetcher = DailyDrawsFetcher()
-    hoy = datetime.now().strftime("%Y-%m-%d")
-    daily_data = fetcher.fetch_for_date(hoy)
-    print(f"Resultados {hoy}: {len(daily_data)} sorteos obtenidos.")
+    date_draws =  datetime.now().date() - timedelta(days=1)
+    results = fetcher.fetch_for_date(date_draws)
+    print(f"Se obtuvieron {len(results)} resultados para {date_draws:%Y-%m-%d}")
+    if results:
+        print(json.dumps(results, indent=2, ensure_ascii=False))
+
 
