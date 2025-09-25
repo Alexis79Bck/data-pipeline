@@ -1,7 +1,10 @@
 data/
 
 __pycache__/
+__pycache__/*.cpython-313.pyc
+__pycache__/*.pyc
 *.pyc
+*.cpython-313.pyc
 
 # Entorno virtual
 venv/

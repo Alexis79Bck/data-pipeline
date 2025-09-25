@@ -47,6 +47,7 @@ DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 RESULTADOS_URLS = {
     "LOTERIADEHOY_HISTORICO": "https://loteriadehoy.com/animalito/lottoactivo/historico/{start}/{end}/",
     "LOTERIADEHOY_DIARIO": "https://loteriadehoy.com/animalito/lottoactivo/resultados/{date}/",
+    "LOTERIADEHOY_HOY": "https://loteriadehoy.com/animalito/lottoactivo/resultados/",
     "LOTTOACTIVO": "https://lottoactivo.com/historial/lotto_activo/{start}/{end}/",
 }
 
