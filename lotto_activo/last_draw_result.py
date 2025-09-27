@@ -98,8 +98,17 @@ class LastDrawFetcher:
             numero = parts[0]
             animal = parts[1].title()
 
-            img_el = block.find("img")
+           # Buscar imagen dentro de <div class="circle">
+            img_el = block.find("div", class_="circle").find("img") if block.find("div", class_="circle") else None
             img = img_el["src"] if img_el and img_el.has_attr("src") else None
+            
+          # Extraer color desde la clase de <h4>
+            color = None
+            if "class" in title_el.attrs:
+                clases = title_el["class"]
+                # Filtrar "mt-3" y quedarnos con el color
+                color = next((c for c in clases if c not in ["mt-3"]), None)
+
 
             return {
                 "sorteo": {
@@ -107,6 +116,7 @@ class LastDrawFetcher:
                     "hora": schedule,
                     "animal": animal,
                     "numero": numero,
+                    "color": color,
                     "imagen": img,
                 },
                 "fuente_scraper": {

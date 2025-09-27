@@ -135,6 +135,13 @@ class DailyDrawsFetcher:
                 img_el = block.find("img")
                 img = img_el["src"] if img_el and img_el.has_attr("src") else None
 
+                # Extraer color desde la clase de <h4>
+                color = None
+                if "class" in title_el.attrs:
+                    clases = title_el["class"]
+                    # Filtrar "mt-3" y quedarnos con el color
+                    color = next((c for c in clases if c not in ["mt-3"]), None)
+                    
                 results.append(
                     {
                         "sorteo": {
@@ -142,6 +149,7 @@ class DailyDrawsFetcher:
                                 "hora": schedule,
                                 "animal": animal,
                                 "numero": numero,
+                                "color": color,
                                 "imagen": img,
                             },
                         "fuente_scraper": {
@@ -179,7 +187,7 @@ class DailyDrawsFetcher:
 if __name__ == "__main__":
     fetcher = DailyDrawsFetcher()
     date_draws = datetime.now().date() - timedelta(days=1)
-    results = fetcher.fetch_for_date(date_draws)
+    results = fetcher.fetch_for_date('27-09-2025')
     print(f"Se obtuvieron {len(results)} resultados para {date_draws:%Y-%m-%d}")
     if results:
         print(json.dumps(results, indent=2, ensure_ascii=False))
