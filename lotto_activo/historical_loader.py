@@ -7,7 +7,7 @@ Extrae datos semanales del último año y genera un JSON consolidado.
 import json
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict, Any, final
 import requests
 import logging
 from requests.exceptions import HTTPError, Timeout, RequestException
@@ -90,31 +90,32 @@ class HistoricalLoader:
     
     def load_range_draws(self, start_date: str, end_date: str) -> List[Dict[str, Any]]:
         """Carga los de datos segun rango de fechas indicado (formato DD-MM-YYYY)"""
-        current_end = datetime.strptime(end_date, '%d-%m-%Y')
+        final_date = datetime.strptime(end_date, '%d-%m-%Y')
         current_start = datetime.strptime(start_date, '%d-%m-%Y')
 
         all_data: List[Dict[str, Any]] = []
 
-        while current_start < current_end:
-            current_end = min(current_start + timedelta(days=6), current_end)
+        while current_start <= final_date:
+            week_end = min(current_start + timedelta(days=6), final_date)
             logging.info(
                 "Cargando semana: %s -> %s",
                 current_start.strftime("%d-%m-%Y"),
-                current_end.strftime("%d-%m-%Y"),
+                week_end.strftime("%d-%m-%Y"),
             )
             print(
-                f"Cargando semana: {current_start:%d-%m-%Y} -> {current_end:%d-%m-%Y}"
+                f"Cargando semana: {current_start:%d-%m-%Y} -> {week_end:%d-%m-%Y}"
             )
 
             weekly_data = self._load_data_for_range(
-                current_start.strftime("%Y-%m-%d"), current_end.strftime("%Y-%m-%d")
+                current_start.strftime("%Y-%m-%d"), week_end.strftime("%Y-%m-%d")
             )
             all_data.extend(weekly_data)
 
-            current_start += timedelta(days=7)
+            # Avanzar a la siguiente semana
+            current_start = week_end + timedelta(days=1)
 
         # Guardar todo en un único JSON consolidado
-        self._save_to_json(all_data, current_start, current_end, yearly=False)
+        self._save_to_json(all_data, start_date, end_date, yearly=False)
         return all_data
 
     def _load_data_for_range(
@@ -266,6 +267,6 @@ class HistoricalLoader:
 if __name__ == "__main__":
     loader = HistoricalLoader()
     # historical_data = loader.load_last_year()
-    historical_data = loader.load_range_draws('01-09-2024', '22-09-2024')
+    historical_data = loader.load_range_draws('01-09-2024', '30-09-2025')
     print(f"Carga completada. {len(historical_data)} registros obtenidos.")
 

@@ -187,7 +187,7 @@ class DailyDrawsFetcher:
 if __name__ == "__main__":
     fetcher = DailyDrawsFetcher()
     date_draws = datetime.now().date() - timedelta(days=1)
-    results = fetcher.fetch_for_date('27-09-2025')
+    results = fetcher.fetch_for_date('01-10-2025')
     print(f"Se obtuvieron {len(results)} resultados para {date_draws:%Y-%m-%d}")
     if results:
         print(json.dumps(results, indent=2, ensure_ascii=False))
