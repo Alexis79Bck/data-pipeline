@@ -1,0 +1,1542 @@
+[
+  {
+    "sorteo": {
+      "fecha": "2024-08-26",
+      "hora": "09:00 AM",
+      "animal": "Iguana",
+      "numero": "24",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Iguana_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044123",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-27",
+      "hora": "09:00 AM",
+      "animal": "Burro",
+      "numero": "18",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Burro_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044166",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-28",
+      "hora": "09:00 AM",
+      "animal": "Caballo",
+      "numero": "12",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Caballo_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044201",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-29",
+      "hora": "09:00 AM",
+      "animal": "Burro",
+      "numero": "18",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Burro_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044228",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-30",
+      "hora": "09:00 AM",
+      "animal": "Cebra",
+      "numero": "23",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Cebra_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044255",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-31",
+      "hora": "09:00 AM",
+      "animal": "Vaca",
+      "numero": "26",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Vaca_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044284",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-09-01",
+      "hora": "09:00 AM",
+      "animal": "Ardilla",
+      "numero": "32",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Ardilla_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044311",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-26",
+      "hora": "10:00 AM",
+      "animal": "Mono",
+      "numero": "13",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Mono_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044361",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-27",
+      "hora": "10:00 AM",
+      "animal": "Leon",
+      "numero": "05",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Leon_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044385",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-28",
+      "hora": "10:00 AM",
+      "animal": "Elefante",
+      "numero": "29",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Elefante_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044421",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-29",
+      "hora": "10:00 AM",
+      "animal": "Pavo",
+      "numero": "17",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Pavo_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044443",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-30",
+      "hora": "10:00 AM",
+      "animal": "Zorro",
+      "numero": "15",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Zorro_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044466",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-31",
+      "hora": "10:00 AM",
+      "animal": "Raton",
+      "numero": "08",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Raton_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044489",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-09-01",
+      "hora": "10:00 AM",
+      "animal": "Raton",
+      "numero": "08",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Raton_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044516",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-26",
+      "hora": "11:00 AM",
+      "animal": "Alacran",
+      "numero": "04",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Alacran_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044567",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-27",
+      "hora": "11:00 AM",
+      "animal": "Oso",
+      "numero": "16",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Oso_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044593",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-28",
+      "hora": "11:00 AM",
+      "animal": "Caiman",
+      "numero": "30",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Caiman_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044615",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-29",
+      "hora": "11:00 AM",
+      "animal": "Culebra",
+      "numero": "36",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Culebra_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044636",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-30",
+      "hora": "11:00 AM",
+      "animal": "Ardilla",
+      "numero": "32",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Ardilla_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044658",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-31",
+      "hora": "11:00 AM",
+      "animal": "Burro",
+      "numero": "18",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Burro_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044679",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-09-01",
+      "hora": "11:00 AM",
+      "animal": "Gato",
+      "numero": "11",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Gato_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044701",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-26",
+      "hora": "12:00 PM",
+      "animal": "Raton",
+      "numero": "08",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Raton_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044743",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-27",
+      "hora": "12:00 PM",
+      "animal": "Tigre",
+      "numero": "10",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Tigre_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044765",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-28",
+      "hora": "12:00 PM",
+      "animal": "Perro",
+      "numero": "27",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Perro_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044786",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-29",
+      "hora": "12:00 PM",
+      "animal": "Alacran",
+      "numero": "04",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Alacran_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044809",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-30",
+      "hora": "12:00 PM",
+      "animal": "Perico",
+      "numero": "07",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Perico_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044831",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-31",
+      "hora": "12:00 PM",
+      "animal": "Cebra",
+      "numero": "23",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Cebra_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044854",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-09-01",
+      "hora": "12:00 PM",
+      "animal": "Delfin",
+      "numero": "0",
+      "color": "verde",
+      "imagen": "/dist/animals_img/Delfin_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044879",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-26",
+      "hora": "01:00 PM",
+      "animal": "Ciempies",
+      "numero": "03",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Ciempies_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044925",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-27",
+      "hora": "01:00 PM",
+      "animal": "Ballena",
+      "numero": "00",
+      "color": "verde",
+      "imagen": "/dist/animals_img/Ballena_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044946",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-28",
+      "hora": "01:00 PM",
+      "animal": "Perico",
+      "numero": "07",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Perico_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044967",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-29",
+      "hora": "01:00 PM",
+      "animal": "Ballena",
+      "numero": "00",
+      "color": "verde",
+      "imagen": "/dist/animals_img/Ballena_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.044988",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-30",
+      "hora": "01:00 PM",
+      "animal": "Iguana",
+      "numero": "24",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Iguana_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045008",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-31",
+      "hora": "01:00 PM",
+      "animal": "Aguila",
+      "numero": "09",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Aguila_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045029",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-09-01",
+      "hora": "01:00 PM",
+      "animal": "Alacran",
+      "numero": "04",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Alacran_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045051",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-26",
+      "hora": "02:00 PM",
+      "animal": "Leon",
+      "numero": "05",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Leon_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045092",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-27",
+      "hora": "02:00 PM",
+      "animal": "Camello",
+      "numero": "22",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Camello_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045113",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-28",
+      "hora": "02:00 PM",
+      "animal": "Aguila",
+      "numero": "09",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Aguila_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045136",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-29",
+      "hora": "02:00 PM",
+      "animal": "Perro",
+      "numero": "27",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Perro_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045157",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-30",
+      "hora": "02:00 PM",
+      "animal": "Ciempies",
+      "numero": "03",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Ciempies_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045178",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-31",
+      "hora": "02:00 PM",
+      "animal": "Venado",
+      "numero": "34",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Venado_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045211",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-09-01",
+      "hora": "02:00 PM",
+      "animal": "Zorro",
+      "numero": "15",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Zorro_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045232",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-26",
+      "hora": "03:00 PM",
+      "animal": "Tigre",
+      "numero": "10",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Tigre_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045274",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-27",
+      "hora": "03:00 PM",
+      "animal": "Culebra",
+      "numero": "36",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Culebra_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045295",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-28",
+      "hora": "03:00 PM",
+      "animal": "Ballena",
+      "numero": "00",
+      "color": "verde",
+      "imagen": "/dist/animals_img/Ballena_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045316",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-29",
+      "hora": "03:00 PM",
+      "animal": "Oso",
+      "numero": "16",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Oso_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045337",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-30",
+      "hora": "03:00 PM",
+      "animal": "Vaca",
+      "numero": "26",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Vaca_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045357",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-31",
+      "hora": "03:00 PM",
+      "animal": "Caballo",
+      "numero": "12",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Caballo_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045380",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-09-01",
+      "hora": "03:00 PM",
+      "animal": "Chivo",
+      "numero": "19",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Chivo_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045400",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-26",
+      "hora": "04:00 PM",
+      "animal": "Leon",
+      "numero": "05",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Leon_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045439",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-27",
+      "hora": "04:00 PM",
+      "animal": "Chivo",
+      "numero": "19",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Chivo_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045459",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-28",
+      "hora": "04:00 PM",
+      "animal": "Gallo",
+      "numero": "21",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Gallo_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045480",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-29",
+      "hora": "04:00 PM",
+      "animal": "Zamuro",
+      "numero": "28",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Zamuro_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045500",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-30",
+      "hora": "04:00 PM",
+      "animal": "Perro",
+      "numero": "27",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Perro_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045526",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-31",
+      "hora": "04:00 PM",
+      "animal": "Perico",
+      "numero": "07",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Perico_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045547",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-09-01",
+      "hora": "04:00 PM",
+      "animal": "Venado",
+      "numero": "34",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Venado_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045568",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-26",
+      "hora": "05:00 PM",
+      "animal": "Vaca",
+      "numero": "26",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Vaca_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045606",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-27",
+      "hora": "05:00 PM",
+      "animal": "Zorro",
+      "numero": "15",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Zorro_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045627",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-28",
+      "hora": "05:00 PM",
+      "animal": "Leon",
+      "numero": "05",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Leon_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045650",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-29",
+      "hora": "05:00 PM",
+      "animal": "Camello",
+      "numero": "22",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Camello_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045670",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-30",
+      "hora": "05:00 PM",
+      "animal": "Oso",
+      "numero": "16",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Oso_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045690",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-31",
+      "hora": "05:00 PM",
+      "animal": "Lapa",
+      "numero": "31",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Lapa_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045710",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-09-01",
+      "hora": "05:00 PM",
+      "animal": "Iguana",
+      "numero": "24",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Iguana_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045730",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-26",
+      "hora": "06:00 PM",
+      "animal": "Gallo",
+      "numero": "21",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Gallo_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045770",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-27",
+      "hora": "06:00 PM",
+      "animal": "Pescado",
+      "numero": "33",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Pescado_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045792",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-28",
+      "hora": "06:00 PM",
+      "animal": "Chivo",
+      "numero": "19",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Chivo_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045813",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-29",
+      "hora": "06:00 PM",
+      "animal": "Camello",
+      "numero": "22",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Camello_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045832",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-30",
+      "hora": "06:00 PM",
+      "animal": "Zamuro",
+      "numero": "28",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Zamuro_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045852",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-31",
+      "hora": "06:00 PM",
+      "animal": "Ciempies",
+      "numero": "03",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Ciempies_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045874",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-09-01",
+      "hora": "06:00 PM",
+      "animal": "Jirafa",
+      "numero": "35",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Jirafa_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045895",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-26",
+      "hora": "07:00 PM",
+      "animal": "Paloma",
+      "numero": "14",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Paloma_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045934",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-27",
+      "hora": "07:00 PM",
+      "animal": "Rana",
+      "numero": "06",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Rana_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045954",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-28",
+      "hora": "07:00 PM",
+      "animal": "Elefante",
+      "numero": "29",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Elefante_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045974",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-29",
+      "hora": "07:00 PM",
+      "animal": "Carnero",
+      "numero": "01",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Carnero_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.045996",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-30",
+      "hora": "07:00 PM",
+      "animal": "Chivo",
+      "numero": "19",
+      "color": "rojo",
+      "imagen": "/dist/animals_img/Chivo_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.046016",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-08-31",
+      "hora": "07:00 PM",
+      "animal": "Raton",
+      "numero": "08",
+      "color": "negro",
+      "imagen": "/dist/animals_img/Raton_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.046035",
+      "validado": true
+    }
+  },
+  {
+    "sorteo": {
+      "fecha": "2024-09-01",
+      "hora": "07:00 PM",
+      "animal": "Delfin",
+      "numero": "0",
+      "color": "verde",
+      "imagen": "/dist/animals_img/Delfin_2.webp"
+    },
+    "fuente_scraper": {
+      "url_fuente": "https://loteriadehoy.com/animalito/lottoactivo/historico/",
+      "rango_fechas": {
+        "inicio": "2024-09-01",
+        "fin": "2024-09-07"
+      },
+      "script": "historical_loader",
+      "procesado_el": "2025-10-02T18:14:10.046056",
+      "validado": true
+    }
+  }
+]
